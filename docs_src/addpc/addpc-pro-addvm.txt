@@ -1,0 +1,111 @@
+.. _addpc-pro-addvm:
+
+仮想マシンの追加
+==================================================
+:ref:`準備した仮想マシン <addpc-pro-vm>` を GNS3 に追加します。
+
+.. _addpc-pro-addvm-player:
+
+VMware Workstation Pro
+--------------------------------------------------
+VMware Workstation Pro で仮想マシンのネットワークインターフェースを VMnet2 ～ VMnet19 （ VMnet8 は除く）のいずれかに紐づけます。今回は先に設定した VMnet2 に紐づけました。
+
+.. image:: img/2020-09-19_18h55_41.png
+
+|
+
+.. image:: img/2020-09-19_18h57_18.png
+
+|
+
+.. _addpc-pro-addvm-gns3:
+
+GNS3
+--------------------------------------------------
+#. :guilabel:`Edit` をクリック
+
+   .. image:: img/2020-09-19_19h10_46.png
+
+   |
+
+#. :guilabel:`Preferences...` をクリック
+
+   .. image:: img/2020-09-19_19h10_51.png
+
+   |
+
+#. :guilabel:`VMware VMs` をクリック
+
+   .. image:: img/2020-09-19_19h11_19.png
+
+   |
+
+#. :guilabel:`New` をクリック
+
+   .. image:: img/2020-09-19_19h11_36.png
+
+   |
+
+#. :guilabel:`Next` をクリック
+
+   .. image:: img/2020-09-19_19h11_53.png
+
+   |
+
+#. :guilabel:`VM list` のプルダウンリストから追加する仮想マシンを選択
+
+   .. image:: img/2020-09-19_19h12_11.png
+
+   ↓
+
+   .. image:: img/2020-09-19_19h12_24.png
+
+   |
+
+#. :guilabel:`Finish` をクリック
+
+   .. image:: img/2020-09-19_19h12_38.png
+
+   |
+
+#. :guilabel:`Edit` をクリック
+
+   .. image:: img/2020-09-19_19h12_52.png
+
+   |
+
+#. :guilabel:`Network` をクリック
+
+   .. image:: img/2020-09-19_19h13_10.png
+
+   |
+
+#. :guilabel:`Allow GNS3 to override non custom VMware adapter` をチェック
+
+   .. image:: img/2020-09-19_19h16_49.png
+
+   |
+
+#. :guilabel:`OK` をクリック
+
+   .. image:: img/2020-09-19_19h13_44.png
+
+   |
+
+#. :guilabel:`OK` をクリック
+
+   .. image:: img/2020-09-19_19h14_03.png
+
+   |
+
+#. :guilabel:`Browse End Devices` をクリック
+
+   .. image:: img/2020-09-19_19h14_19.png
+
+   |
+
+#. 追加した仮想マシンを確認
+
+   .. image:: img/2020-09-19_19h14_33.png
+
+   |

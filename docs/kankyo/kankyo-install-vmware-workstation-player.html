@@ -1,0 +1,339 @@
+<!doctype html>
+<html class="no-js">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="VMware VIX のインストール" href="kankyo-install-vmware-vix.html" /><link rel="prev" title="環境構築" href="kankyo.html" />
+
+    <meta name="generator" content="sphinx-4.1.1, furo 2021.07.05.beta38"/>
+        <title>VMware Workstation Player のインストール - Learning GNS3 2021/07/18 更新 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+    
+
+
+<style>
+  :root {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+  }
+
+  /* For allowing end-user-specific overrides */
+  .override-light {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  .override-dark {
+    --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+  }
+</style><link media="(prefers-color-scheme: dark)" rel="stylesheet" href="../_static/pygments_dark.css"></head>
+  <body dir="">
+    
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+      stroke-width="1.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z"/>
+      <line x1="4" y1="6" x2="20" y2="6" />
+      <line x1="10" y1="12" x2="20" y2="12" />
+      <line x1="6" y1="18" x2="20" y2="18" />
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+      class="feather feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+      class="feather feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">Learning GNS3 2021/07/18 更新　 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  
+  <span class="sidebar-brand-text">Learning GNS3 2021/07/18 更新　 documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html">
+  <input class="sidebar-search" placeholder=Search name="q">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="kankyo.html">環境構築</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label for="toctree-checkbox-1"><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">VMware Workstation Player のインストール</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kankyo-install-vmware-vix.html">VMware VIX のインストール</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kankyo-install-gns3-vm.html">VMware Player：GNS3 VM のインポート</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kankyo-install-gns3.html">VMware Player：GNS3 のインストール</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kankyo-init.html">VMware Player：GNS3 の初期設定</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kankyo-install-oracle-virtualbox.html">Oracle VM VirtualBox のインストール</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kankyo-install-vb-gns3-vm.html">VirtualBox：GNS3 VM のインポート</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kankyo-install-vb-gns3.html">VirtualBox：GNS3 のインストール</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kankyo-vb-init.html">VirtualBox：GNS3 の初期設定</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kankyo-install-vmware-workstation-pro.html">VMware Workstation Pro のインストール</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kankyo-install-pro-gns3-vm.html">VMware Pro：GNS3 VM のインポート</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kankyo-install-pro-gns3.html">VMware Pro：GNS3 のインストール</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kankyo-pro-init.html">VMware Pro：GNS3 の初期設定</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../kihon/kihon.html">基本操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../object/object.html">オブジェクトの操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../walkthru/walkthru.html">ウォークスルー</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vpcs/vpcs.html">VPCS</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../addpc/addpc.html">End Device の追加</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label for="toctree-checkbox-2"><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../addpc/addpc-vmware.html">End Device の追加：VMware Player 編</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../addpc/addpc-vitualbox.html">End Device の追加：Oracle VM VirtualBox 編</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../addpc/addpc-pro-vmware.html">End Device の追加：VMware Pro 編</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../upgrade/upgrade.html">アップグレード</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog/changelog.html">改版履歴</a></li>
+</ul>
+
+</div>
+</div>
+      </div>
+      
+    </div>
+  </aside>
+  <main class="main">
+    <div class="content">
+      <article role="main">
+        <label class="toc-overlay-icon toc-content-icon" for="__toc">
+          <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+        </label>
+        <div class="section" id="vmware-workstation-player">
+<span id="kankyo-install-vmware-workstation-player"></span><h1>VMware Workstation Player のインストール<a class="headerlink" href="#vmware-workstation-player" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="kankyo-install-vmware-workstation-player-install">
+<span id="id1"></span><h2>インストール<a class="headerlink" href="#kankyo-install-vmware-workstation-player-install" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p><code class="file docutils literal notranslate"><span class="pre">VMware-player-14.1.8-14921873.exe</span></code> を実行</p>
+<img alt="../_images/2020-09-02_21h25_30.png" src="../_images/2020-09-02_21h25_30.png"/>
+<div class="line-block">
+<div class="line"><br/></div>
+</div>
+</li>
+<li><p><span class="guilabel">次へ(N)</span> をクリック</p>
+<img alt="../_images/2020-09-02_21h26_22.png" src="../_images/2020-09-02_21h26_22.png"/>
+<div class="line-block">
+<div class="line"><br/></div>
+</div>
+</li>
+<li><p><span class="guilabel">使用許諾契約書に同意します(A)</span> をチェック</p>
+<img alt="../_images/2020-09-02_21h28_46.png" src="../_images/2020-09-02_21h28_46.png"/>
+<div class="line-block">
+<div class="line"><br/></div>
+</div>
+</li>
+<li><p><span class="guilabel">次へ(N)</span> をクリック</p>
+<img alt="../_images/2020-09-02_21h29_00.png" src="../_images/2020-09-02_21h29_00.png"/>
+<div class="line-block">
+<div class="line"><br/></div>
+</div>
+</li>
+<li><p><span class="guilabel">次へ(N)</span> をクリック</p>
+<img alt="../_images/2020-09-02_21h29_11.png" src="../_images/2020-09-02_21h29_11.png"/>
+<div class="line-block">
+<div class="line"><br/></div>
+</div>
+</li>
+<li><p>このバージョンで固定するのでチェックを外す</p>
+<img alt="../_images/2020-09-02_21h30_37.png" src="../_images/2020-09-02_21h30_37.png"/>
+<div class="line-block">
+<div class="line"><br/></div>
+</div>
+</li>
+<li><p><span class="guilabel">次へ(N)</span> をクリック</p>
+<img alt="../_images/2020-09-02_21h30_48.png" src="../_images/2020-09-02_21h30_48.png"/>
+<div class="line-block">
+<div class="line"><br/></div>
+</div>
+</li>
+<li><p><span class="guilabel">次へ(N)</span> をクリック</p>
+<img alt="../_images/2020-09-02_21h31_02.png" src="../_images/2020-09-02_21h31_02.png"/>
+<div class="line-block">
+<div class="line"><br/></div>
+</div>
+</li>
+<li><p><span class="guilabel">インストール(I)</span> をクリック</p>
+<img alt="../_images/2020-09-02_21h31_33.png" src="../_images/2020-09-02_21h31_33.png"/>
+<div class="line-block">
+<div class="line"><br/></div>
+</div>
+</li>
+<li><p>インストール中</p>
+<img alt="../_images/2020-09-02_21h32_00.png" src="../_images/2020-09-02_21h32_00.png"/>
+<div class="line-block">
+<div class="line"><br/></div>
+</div>
+</li>
+<li><p><span class="guilabel">完了(F)</span> をクリック</p>
+<img alt="../_images/2020-09-02_21h32_16.png" src="../_images/2020-09-02_21h32_16.png"/>
+<div class="line-block">
+<div class="line"><br/></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="kankyo-install-vmware-workstation-player-license">
+<span id="id2"></span><h2>ライセンス登録<a class="headerlink" href="#kankyo-install-vmware-workstation-player-license" title="Permalink to this headline">¶</a></h2>
+<ol class="arabic">
+<li><p>デスクトップ上のアイコンから起動</p>
+<img alt="../_images/2020-09-02_21h32_43.png" src="../_images/2020-09-02_21h32_43.png"/>
+<div class="line-block">
+<div class="line"><br/></div>
+</div>
+</li>
+<li><p><span class="guilabel">非営利目的で VMware Workstation 14 Player を無償で使用する(U)</span> が選択されていることを確認</p>
+<img alt="../_images/2020-09-02_21h33_12.png" src="../_images/2020-09-02_21h33_12.png"/>
+<div class="line-block">
+<div class="line"><br/></div>
+</div>
+</li>
+<li><p><span class="guilabel">続行(C)</span> をクリック</p>
+<img alt="../_images/2020-09-02_21h33_27.png" src="../_images/2020-09-02_21h33_27.png"/>
+<div class="line-block">
+<div class="line"><br/></div>
+</div>
+</li>
+<li><p><span class="guilabel">完了(F)</span> をクリック</p>
+<img alt="../_images/2020-09-02_21h33_38.png" src="../_images/2020-09-02_21h33_38.png"/>
+<div class="line-block">
+<div class="line"><br/></div>
+</div>
+</li>
+<li><p>VMware Workstation Player が起動</p>
+<img alt="../_images/2020-09-02_21h33_55.png" src="../_images/2020-09-02_21h33_55.png"/>
+<div class="line-block">
+<div class="line"><br/></div>
+</div>
+</li>
+<li><p>右上の <span class="guilabel">×</span> をクリックして閉じる</p>
+<img alt="../_images/2020-09-02_21h34_05.png" src="../_images/2020-09-02_21h34_05.png"/>
+<div class="line-block">
+<div class="line"><br/></div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+
+      </article>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="kankyo-install-vmware-vix.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">VMware VIX のインストール</div>
+              </div>
+              <svg><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="kankyo.html">
+              <svg><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">環境構築</div>
+                
+              </div>
+            </a>
+        </div>
+
+        <div class="related-information">
+              Copyright &#169; 2021, y_mrok
+            |
+            Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+              and
+              <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+              <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">VMware Workstation Player のインストール</a><ul>
+<li><a class="reference internal" href="#kankyo-install-vmware-workstation-player-install">インストール</a></li>
+<li><a class="reference internal" href="#kankyo-install-vmware-workstation-player-license">ライセンス登録</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </main>
+</div><script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/scripts/main.js"></script>
+    </body>
+</html>

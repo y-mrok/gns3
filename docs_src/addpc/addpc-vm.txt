@@ -1,0 +1,15 @@
+.. _addpc-vm:
+
+追加する仮想マシンの準備
+==================================================
+GNS3 に追加する仮想マシンは他の VMware Workstation Player 上の仮想マシンと同様にインストールします。ツールなどが必要な場合は、それらもインストールします。
+
+今回追加する仮想マシンは `Ubuntu Japanese Team <https://www.ubuntulinux.jp/>`_ がリリースしている「 `Ubuntu 20.04 LTS 日本語 Remix <https://www.ubuntulinux.jp/News/ubuntu2004-ja-remix>`_ 」です。
+
+.. image:: img/2020-09-06_10h17_27.png
+
+|
+
+.. image:: img/2020-09-06_10h18_01.png
+
+|

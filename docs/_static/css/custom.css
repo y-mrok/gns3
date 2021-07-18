@@ -1,0 +1,18 @@
+.wy-table-responsive table td, .wy-table-responsive table th {
+  white-space: normal;
+}
+
+table.docutils th.head{
+  background-color: lightblue;
+  text-align: center;
+  vretial-align: middle;
+}
+
+table.docutils tr.row-odd{
+  background-color: aliceblue;
+}
+
+table.docutils tr{
+  text-align: left;
+  vretial-align: middle;
+}

@@ -1,0 +1,35 @@
+.. _kihon-save-project:
+
+プロジェクトの保存
+==================================================
+作成したネットワークをプロジェクトに保存します。
+
+#. :guilabel:`File` をクリック
+
+   .. image:: img/2020-09-05_16h24_00.png
+
+   |
+
+#. :guilabel:`Save project as...` をクリック
+
+   .. image:: img/2020-09-05_16h24_18.png
+
+   |
+
+#. :guilabel:`Name` と :guilabel:`Location` を確認
+
+   .. image:: img/2020-09-05_16h25_32.png
+
+   |
+
+#. :guilabel:`OK` をクリック
+
+   .. image:: img/2020-09-05_16h25_47.png
+
+   |
+
+#. プロジェクトの保存終了
+
+   .. image:: img/2020-09-05_16h26_21.png
+
+   |

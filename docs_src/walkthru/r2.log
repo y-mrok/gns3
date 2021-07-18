@@ -1,0 +1,157 @@
+R2#show interfaces
+Ethernet0/0 is administratively down, line protocol is down 
+  Hardware is AmdP2, address is cc02.0555.0000 (bia cc02.0555.0000)
+  MTU 1500 bytes, BW 10000 Kbit, DLY 1000 usec, 
+     reliability 255/255, txload 1/255, rxload 1/255
+  Encapsulation ARPA, loopback not set
+  Keepalive set (10 sec)
+  ARP type: ARPA, ARP Timeout 04:00:00
+  Last input never, output never, output hang never
+  Last clearing of "show interface" counters never
+  Input queue: 0/75/0/0 (size/max/drops/flushes); Total output drops: 0
+  Queueing strategy: fifo
+  Output queue: 0/40 (size/max)
+  5 minute input rate 0 bits/sec, 0 packets/sec
+  5 minute output rate 0 bits/sec, 0 packets/sec
+     0 packets input, 0 bytes, 0 no buffer
+     Received 0 broadcasts, 0 runts, 0 giants, 0 throttles
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored
+     0 input packets with dribble condition detected
+     0 packets output, 0 bytes, 0 underruns
+     0 output errors, 0 collisions, 0 interface resets
+     0 babbles, 0 late collision, 0 deferred
+     0 lost carrier, 0 no carrier
+     0 output buffer failures, 0 output buffers swapped out
+ --More--         FastEthernet1/0 is administratively down, line protocol is down 
+  Hardware is AmdFE, address is cc02.0555.0010 (bia cc02.0555.0010)
+  MTU 1500 bytes, BW 100000 Kbit, DLY 100 usec, 
+     reliability 255/255, txload 1/255, rxload 1/255
+  Encapsulation ARPA, loopback not set
+  Keepalive set (10 sec)
+  Full-duplex, 100Mb/s, 100BaseTX/FX
+  ARP type: ARPA, ARP Timeout 04:00:00
+  Last input never, output never, output hang never
+  Last clearing of "show interface" counters never
+  Input queue: 0/75/0/0 (size/max/drops/flushes); Total output drops: 0
+  Queueing strategy: fifo
+  Output queue: 0/40 (size/max)
+  5 minute input rate 0 bits/sec, 0 packets/sec
+  5 minute output rate 0 bits/sec, 0 packets/sec
+     0 packets input, 0 bytes
+     Received 0 broadcasts, 0 runts, 0 giants, 0 throttles
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored
+     0 watchdog
+     0 input packets with dribble condition detected
+     0 packets output, 0 bytes, 0 underruns
+     0 output errors, 0 collisions, 0 interface resets
+     0 babbles, 0 late collision, 0 deferred
+ --More--              0 lost carrier, 0 no carrier
+     0 output buffer failures, 0 output buffers swapped out
+R2#
+R2#configure terminal
+Enter configuration commands, one per line.  End with CNTL/Z.
+R2(config)#
+R2(config)#interface ethernet0/0
+R2(config-if)#
+R2(config-if)#ip address 192.168.31.254 255.255.255.0
+R2(config-if)#
+R2(config-if)#no shutdown
+R2(config-if)#
+R2(config-if)#
+*Mar  1 00:04:25.615: %LINK-3-UPDOWN: Interface Ethernet0/0, changed state to up
+*Mar  1 00:04:26.615: %LINEPROTO-5-UPDOWN: Line protocol on Interface Ethernet0/0, changed state to up
+R2(config-if)#exit
+R2(config)#
+R2(config)#interface fastethernet1/0
+R2(config-if)#
+R2(config-if)#ip address 192.168.21.2 255.255.255.0
+R2(config-if)#
+R2(config-if)#no shutdown
+R2(config-if)#
+R2(config-if)#
+*Mar  1 00:04:55.051: %LINK-3-UPDOWN: Interface FastEthernet1/0, changed state to up
+*Mar  1 00:04:56.051: %LINEPROTO-5-UPDOWN: Line protocol on Interface FastEthernet1/0, changed state to up
+R2(config-if)#exit
+R2(config)#
+R2(config)#router rip
+R2(config-router)#
+R2(config-router)#network 192.168.31.0
+R2(config-router)#
+R2(config-router)#network 192.168.21.0
+R2(config-router)#
+R2(config-router)#end
+R2#
+*Mar  1 00:05:32.195: %SYS-5-CONFIG_I: Configured from console by console
+R2#
+R2#show interfaces
+Ethernet0/0 is up, line protocol is up 
+  Hardware is AmdP2, address is cc02.0555.0000 (bia cc02.0555.0000)
+  Internet address is 192.168.31.254/24
+  MTU 1500 bytes, BW 10000 Kbit, DLY 1000 usec, 
+     reliability 255/255, txload 1/255, rxload 1/255
+  Encapsulation ARPA, loopback not set
+  Keepalive set (10 sec)
+  ARP type: ARPA, ARP Timeout 04:00:00
+  Last input never, output 00:00:09, output hang never
+  Last clearing of "show interface" counters never
+  Input queue: 0/75/0/0 (size/max/drops/flushes); Total output drops: 0
+  Queueing strategy: fifo
+  Output queue: 0/40 (size/max)
+  5 minute input rate 0 bits/sec, 0 packets/sec
+  5 minute output rate 0 bits/sec, 0 packets/sec
+     0 packets input, 0 bytes, 0 no buffer
+     Received 0 broadcasts, 0 runts, 0 giants, 0 throttles
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored
+     0 input packets with dribble condition detected
+     48 packets output, 5038 bytes, 0 underruns
+     0 output errors, 0 collisions, 1 interface resets
+     0 babbles, 0 late collision, 0 deferred
+     0 lost carrier, 0 no carrier
+ --More--              0 output buffer failures, 0 output buffers swapped out
+FastEthernet1/0 is up, line protocol is up 
+  Hardware is AmdFE, address is cc02.0555.0010 (bia cc02.0555.0010)
+  Internet address is 192.168.21.2/24
+  MTU 1500 bytes, BW 100000 Kbit, DLY 100 usec, 
+     reliability 255/255, txload 1/255, rxload 1/255
+  Encapsulation ARPA, loopback not set
+  Keepalive set (10 sec)
+  Full-duplex, 100Mb/s, 100BaseTX/FX
+  ARP type: ARPA, ARP Timeout 04:00:00
+  Last input 00:00:23, output 00:00:04, output hang never
+  Last clearing of "show interface" counters never
+  Input queue: 0/75/0/0 (size/max/drops/flushes); Total output drops: 0
+  Queueing strategy: fifo
+  Output queue: 0/40 (size/max)
+  5 minute input rate 0 bits/sec, 0 packets/sec
+  5 minute output rate 0 bits/sec, 0 packets/sec
+     14 packets input, 2014 bytes
+     Received 14 broadcasts, 0 runts, 0 giants, 0 throttles
+     0 input errors, 0 CRC, 0 frame, 0 overrun, 0 ignored
+     0 watchdog
+     0 input packets with dribble condition detected
+     45 packets output, 4741 bytes, 0 underruns
+ --More--              0 output errors, 0 collisions, 1 interface resets
+     0 babbles, 0 late collision, 0 deferred
+     0 lost carrier, 0 no carrier
+     0 output buffer failures, 0 output buffers swapped out
+R2#
+R2#show ip route
+Codes: C - connected, S - static, R - RIP, M - mobile, B - BGP
+       D - EIGRP, EX - EIGRP external, O - OSPF, IA - OSPF inter area 
+       N1 - OSPF NSSA external type 1, N2 - OSPF NSSA external type 2
+       E1 - OSPF external type 1, E2 - OSPF external type 2
+       i - IS-IS, su - IS-IS summary, L1 - IS-IS level-1, L2 - IS-IS level-2
+       ia - IS-IS inter area, * - candidate default, U - per-user static route
+       o - ODR, P - periodic downloaded static route
+
+Gateway of last resort is not set
+
+C    192.168.31.0/24 is directly connected, Ethernet0/0
+R    192.168.11.0/24 [120/1] via 192.168.21.1, 00:00:07, FastEthernet1/0
+C    192.168.21.0/24 is directly connected, FastEthernet1/0
+R2#
+R2#copy running-config startup-config
+Destination filename [startup-config]? 
+Building configuration...
+[OK]
+R2#

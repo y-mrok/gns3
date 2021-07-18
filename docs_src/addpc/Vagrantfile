@@ -1,0 +1,33 @@
+$script = <<-'SCRIPT'
+timedatectl set-timezone Asia/Tokyo
+dnf -y remove open-vm-tools
+dnf -y update
+dnf -y install epel-release
+dnf -y install vim-enhanced
+dnf -y isntall tree
+dnf -y install ansible
+SCRIPT
+
+Vagrant.configure("2") do |config|
+  config.vm.provider "virtualbox" do |vb|
+    vb.memory = "4096"
+    vb.cpus = 1
+    vb.customize [
+      "modifyvm", :id,
+      "--ioapic", "on",
+      "--graphicscontroller", "vmsvga",
+      "--nicpromisc2", "allow-all"
+    ]
+  end
+
+  config.vm.define :centos8 do |centos8|
+    centos8.vm.box = "centos/8"
+    centos8.vm.network "public_network", mac: "001825000151"
+    centos8.vm.hostname = "centos8.exam.local"
+    centos8.vm.provider "virtualbox" do |vb|
+      vb.name = "centos8"
+    end
+    centos8.vm.provision "shell", inline: $script
+  end
+
+end

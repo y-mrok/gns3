@@ -1,0 +1,529 @@
+<!doctype html>
+<html class="no-js">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="アップグレード" href="../upgrade/upgrade.html" /><link rel="prev" title="End Device の追加：Oracle VM VirtualBox 編" href="addpc-vitualbox.html" />
+
+    <meta name="generator" content="sphinx-4.1.1, furo 2021.07.05.beta38"/>
+        <title>End Device の追加：VMware Pro 編 - Learning GNS3 2021/07/18 更新 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+    
+
+
+<style>
+  :root {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+  }
+
+  /* For allowing end-user-specific overrides */
+  .override-light {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  .override-dark {
+    --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+  }
+</style><link media="(prefers-color-scheme: dark)" rel="stylesheet" href="../_static/pygments_dark.css"></head>
+  <body dir="">
+    
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+      stroke-width="1.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z"/>
+      <line x1="4" y1="6" x2="20" y2="6" />
+      <line x1="10" y1="12" x2="20" y2="12" />
+      <line x1="6" y1="18" x2="20" y2="18" />
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+      class="feather feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+      class="feather feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">Learning GNS3 2021/07/18 更新　 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  
+  <span class="sidebar-brand-text">Learning GNS3 2021/07/18 更新　 documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html">
+  <input class="sidebar-search" placeholder=Search name="q">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../kankyo/kankyo.html">環境構築</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label for="toctree-checkbox-1"><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../kankyo/kankyo-install-vmware-workstation-player.html">VMware Workstation Player のインストール</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kankyo/kankyo-install-vmware-vix.html">VMware VIX のインストール</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kankyo/kankyo-install-gns3-vm.html">VMware Player：GNS3 VM のインポート</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kankyo/kankyo-install-gns3.html">VMware Player：GNS3 のインストール</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kankyo/kankyo-init.html">VMware Player：GNS3 の初期設定</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kankyo/kankyo-install-oracle-virtualbox.html">Oracle VM VirtualBox のインストール</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kankyo/kankyo-install-vb-gns3-vm.html">VirtualBox：GNS3 VM のインポート</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kankyo/kankyo-install-vb-gns3.html">VirtualBox：GNS3 のインストール</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kankyo/kankyo-vb-init.html">VirtualBox：GNS3 の初期設定</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kankyo/kankyo-install-vmware-workstation-pro.html">VMware Workstation Pro のインストール</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kankyo/kankyo-install-pro-gns3-vm.html">VMware Pro：GNS3 VM のインポート</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kankyo/kankyo-install-pro-gns3.html">VMware Pro：GNS3 のインストール</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../kankyo/kankyo-pro-init.html">VMware Pro：GNS3 の初期設定</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../kihon/kihon.html">基本操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../object/object.html">オブジェクトの操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../walkthru/walkthru.html">ウォークスルー</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vpcs/vpcs.html">VPCS</a></li>
+<li class="toctree-l1 current has-children"><a class="reference internal" href="addpc.html">End Device の追加</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label for="toctree-checkbox-2"><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="addpc-vmware.html">End Device の追加：VMware Player 編</a></li>
+<li class="toctree-l2"><a class="reference internal" href="addpc-vitualbox.html">End Device の追加：Oracle VM VirtualBox 編</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">End Device の追加：VMware Pro 編</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../upgrade/upgrade.html">アップグレード</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog/changelog.html">改版履歴</a></li>
+</ul>
+
+</div>
+</div>
+      </div>
+      
+    </div>
+  </aside>
+  <main class="main">
+    <div class="content">
+      <article role="main">
+        <label class="toc-overlay-icon toc-content-icon" for="__toc">
+          <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+        </label>
+        <div class="section" id="end-device-vmware-pro">
+<span id="addpc-pro-vmware"></span><h1>End Device の追加：VMware Pro 編<a class="headerlink" href="#end-device-vmware-pro" title="Permalink to this headline">¶</a></h1>
+<div class="line-block">
+<div class="line">● <a class="reference internal" href="#addpc-pro-vm"><span class="std std-ref">追加する仮想マシンの準備</span></a></div>
+<div class="line">● <a class="reference internal" href="#addpc-pro-init"><span class="std std-ref">準備</span></a></div>
+<div class="line">● <a class="reference internal" href="#addpc-pro-addvm"><span class="std std-ref">仮想マシンの追加</span></a></div>
+<div class="line">● <a class="reference internal" href="#addpc-pro-use"><span class="std std-ref">追加した仮想マシンを使う</span></a></div>
+</div>
+<div class="section" id="addpc-pro-vm">
+<span id="id1"></span><h2>追加する仮想マシンの準備<a class="headerlink" href="#addpc-pro-vm" title="Permalink to this headline">¶</a></h2>
+<p>GNS3 に追加する仮想マシンは他の VMware Workstation Pro 上の仮想マシンと同様にインストールします。ツールなどが必要な場合は、それらもインストールします。</p>
+<p>今回追加する仮想マシンは <a class="reference external" href="https://www.microsoft.com/ja-jp/evalcenter/evaluate-windows-10-enterprise">Microsoft Windows 10 Enterprise Evaluation</a> です。</p>
+<img alt="../_images/2020-09-19_16h27_16.png" src="../_images/2020-09-19_16h27_16.png"/>
+<div class="line-block">
+<div class="line"><br/></div>
+</div>
+</div>
+<div class="section" id="addpc-pro-init">
+<span id="id2"></span><h2>準備<a class="headerlink" href="#addpc-pro-init" title="Permalink to this headline">¶</a></h2>
+<p>追加する仮想マシンのネットワークインターフェースは VMnet2 ～ VMnet19 （ VMnet8 は除く）のいずれかに紐づける必要があります。 VMnet2 ～ VMnet19 の設定は「仮想ネットワークエディタ」で行います。</p>
+<div class="section" id="vmnet2-vmnet19">
+<h3>VMnet2 ～ VMnet19 の要件<a class="headerlink" href="#vmnet2-vmnet19" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Hos-Only であること</p></li>
+<li><p>DHCP が稼働していないこと</p></li>
+</ul>
+</div>
+<div class="section" id="id3">
+<h3>設定<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>今回は VMnet2 を設定します。</p>
+<div class="section" id="id4">
+<h4>仮想ネットワークエディタ<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic">
+<li><p>「仮想ネットワークエディタ」を起動</p>
+<img alt="../_images/2020-09-19_16h33_31.png" src="../_images/2020-09-19_16h33_31.png"/>
+<div class="line-block">
+<div class="line"><br/></div>
+</div>
+</li>
+<li><p><span class="guilabel">設定の変更(C)</span> をクリック</p>
+<img alt="../_images/2020-09-19_16h38_44.png" src="../_images/2020-09-19_16h38_44.png"/>
+<div class="line-block">
+<div class="line"><br/></div>
+</div>
+</li>
+<li><p><span class="guilabel">ネットワークの追加(E)…</span> をクリック</p>
+<img alt="../_images/2020-09-19_16h40_01.png" src="../_images/2020-09-19_16h40_01.png"/>
+<div class="line-block">
+<div class="line"><br/></div>
+</div>
+</li>
+<li><p><span class="guilabel">追加するネットワークを選択(S)</span> は <span class="guilabel">VMnet2</span> を選択</p>
+<img alt="../_images/2020-09-19_16h41_11.png" src="../_images/2020-09-19_16h41_11.png"/>
+<div class="line-block">
+<div class="line"><br/></div>
+</div>
+</li>
+<li><p><span class="guilabel">OK</span> をクリック</p>
+<img alt="../_images/2020-09-19_16h42_10.png" src="../_images/2020-09-19_16h42_10.png"/>
+<div class="line-block">
+<div class="line"><br/></div>
+</div>
+</li>
+<li><p><span class="guilabel">VMnet2</span> を選択　→　次のように設定</p>
+<div class="table-wrapper"><table class="docutils align-default">
+<colgroup>
+<col style="width: 50%"/>
+<col style="width: 50%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>項目</p></td>
+<td><p>設定内容</p></td>
+</tr>
+<tr class="row-even"><td><p>VMnet 情報</p></td>
+<td><p>ホストオンリー（ VM をプライベートネットワーク内で内部的に接続する）(H)</p></td>
+</tr>
+<tr class="row-odd"><td><p>ローカル DHCP サービスを使用して IP アドレスを VM に配布する(D)</p></td>
+<td><p>チェックを外す</p></td>
+</tr>
+</tbody>
+</table></div>
+<img alt="../_images/2020-09-19_16h46_01.png" src="../_images/2020-09-19_16h46_01.png"/>
+<div class="line-block">
+<div class="line"><br/></div>
+</div>
+</li>
+<li><p><span class="guilabel">OK</span> をクリック</p>
+<img alt="../_images/2020-09-19_16h46_50.png" src="../_images/2020-09-19_16h46_50.png"/>
+<div class="line-block">
+<div class="line"><br/></div>
+</div>
+</li>
+<li><p>設定終了</p>
+<div class="line-block">
+<div class="line"><br/></div>
+</div>
+</li>
+</ol>
+</div>
+<div class="section" id="gns3">
+<h4>GNS3<a class="headerlink" href="#gns3" title="Permalink to this headline">¶</a></h4>
+<ol class="arabic">
+<li><p>GNS3 を起動</p>
+<img alt="../_images/2020-09-19_18h35_07.png" src="../_images/2020-09-19_18h35_07.png"/>
+<div class="line-block">
+<div class="line"><br/></div>
+</div>
+</li>
+<li><p><span class="guilabel">Edit</span> をクリック</p>
+<img alt="../_images/2020-09-19_18h38_08.png" src="../_images/2020-09-19_18h38_08.png"/>
+<div class="line-block">
+<div class="line"><br/></div>
+</div>
+</li>
+<li><p><span class="guilabel">Preferences…</span> をクリック</p>
+<img alt="../_images/2020-09-19_18h38_27.png" src="../_images/2020-09-19_18h38_27.png"/>
+<div class="line-block">
+<div class="line"><br/></div>
+</div>
+</li>
+<li><p><span class="guilabel">VMware</span> をクリック</p>
+<img alt="../_images/2020-09-19_18h38_43.png" src="../_images/2020-09-19_18h38_43.png"/>
+<div class="line-block">
+<div class="line"><br/></div>
+</div>
+</li>
+<li><p><span class="guilabel">Advanced local settings</span> をクリック</p>
+<img alt="../_images/2020-09-19_18h39_06.png" src="../_images/2020-09-19_18h39_06.png"/>
+<div class="line-block">
+<div class="line"><br/></div>
+</div>
+</li>
+<li><p><span class="guilabel">vmnet19</span> を <span class="guilabel">vmnet2</span> に変更</p>
+<img alt="../_images/2020-09-19_18h40_36.png" src="../_images/2020-09-19_18h40_36.png"/>
+<p>↓</p>
+<img alt="../_images/2020-09-19_18h41_26.png" src="../_images/2020-09-19_18h41_26.png"/>
+<div class="line-block">
+<div class="line"><br/></div>
+</div>
+</li>
+<li><p><span class="guilabel">Configure</span> をクリック</p>
+<img alt="../_images/2020-09-19_18h41_43.png" src="../_images/2020-09-19_18h41_43.png"/>
+<div class="line-block">
+<div class="line"><br/></div>
+</div>
+</li>
+<li><p>設定中</p>
+<img alt="../_images/2020-09-19_18h42_36.png" src="../_images/2020-09-19_18h42_36.png"/>
+<div class="line-block">
+<div class="line"><br/></div>
+</div>
+</li>
+<li><p><span class="guilabel">OK</span> をクリック</p>
+<img alt="../_images/2020-09-19_18h43_09.png" src="../_images/2020-09-19_18h43_09.png"/>
+<div class="line-block">
+<div class="line"><br/></div>
+</div>
+</li>
+<li><p>設定終了</p>
+<img alt="../_images/2020-09-19_18h43_27.png" src="../_images/2020-09-19_18h43_27.png"/>
+<div class="line-block">
+<div class="line"><br/></div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="section" id="addpc-pro-addvm">
+<span id="id5"></span><h2>仮想マシンの追加<a class="headerlink" href="#addpc-pro-addvm" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference internal" href="#addpc-pro-vm"><span class="std std-ref">準備した仮想マシン</span></a> を GNS3 に追加します。</p>
+<div class="section" id="vmware-workstation-pro">
+<span id="addpc-pro-addvm-player"></span><h3>VMware Workstation Pro<a class="headerlink" href="#vmware-workstation-pro" title="Permalink to this headline">¶</a></h3>
+<p>VMware Workstation Pro で仮想マシンのネットワークインターフェースを VMnet2 ～ VMnet19 （ VMnet8 は除く）のいずれかに紐づけます。今回は先に設定した VMnet2 に紐づけました。</p>
+<img alt="../_images/2020-09-19_18h55_41.png" src="../_images/2020-09-19_18h55_41.png"/>
+<div class="line-block">
+<div class="line"><br/></div>
+</div>
+<img alt="../_images/2020-09-19_18h57_18.png" src="../_images/2020-09-19_18h57_18.png"/>
+<div class="line-block">
+<div class="line"><br/></div>
+</div>
+</div>
+<div class="section" id="addpc-pro-addvm-gns3">
+<span id="id6"></span><h3>GNS3<a class="headerlink" href="#addpc-pro-addvm-gns3" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic">
+<li><p><span class="guilabel">Edit</span> をクリック</p>
+<img alt="../_images/2020-09-19_19h10_46.png" src="../_images/2020-09-19_19h10_46.png"/>
+<div class="line-block">
+<div class="line"><br/></div>
+</div>
+</li>
+<li><p><span class="guilabel">Preferences…</span> をクリック</p>
+<img alt="../_images/2020-09-19_19h10_51.png" src="../_images/2020-09-19_19h10_51.png"/>
+<div class="line-block">
+<div class="line"><br/></div>
+</div>
+</li>
+<li><p><span class="guilabel">VMware VMs</span> をクリック</p>
+<img alt="../_images/2020-09-19_19h11_19.png" src="../_images/2020-09-19_19h11_19.png"/>
+<div class="line-block">
+<div class="line"><br/></div>
+</div>
+</li>
+<li><p><span class="guilabel">New</span> をクリック</p>
+<img alt="../_images/2020-09-19_19h11_36.png" src="../_images/2020-09-19_19h11_36.png"/>
+<div class="line-block">
+<div class="line"><br/></div>
+</div>
+</li>
+<li><p><span class="guilabel">Next</span> をクリック</p>
+<img alt="../_images/2020-09-19_19h11_53.png" src="../_images/2020-09-19_19h11_53.png"/>
+<div class="line-block">
+<div class="line"><br/></div>
+</div>
+</li>
+<li><p><span class="guilabel">VM list</span> のプルダウンリストから追加する仮想マシンを選択</p>
+<img alt="../_images/2020-09-19_19h12_11.png" src="../_images/2020-09-19_19h12_11.png"/>
+<p>↓</p>
+<img alt="../_images/2020-09-19_19h12_24.png" src="../_images/2020-09-19_19h12_24.png"/>
+<div class="line-block">
+<div class="line"><br/></div>
+</div>
+</li>
+<li><p><span class="guilabel">Finish</span> をクリック</p>
+<img alt="../_images/2020-09-19_19h12_38.png" src="../_images/2020-09-19_19h12_38.png"/>
+<div class="line-block">
+<div class="line"><br/></div>
+</div>
+</li>
+<li><p><span class="guilabel">Edit</span> をクリック</p>
+<img alt="../_images/2020-09-19_19h12_52.png" src="../_images/2020-09-19_19h12_52.png"/>
+<div class="line-block">
+<div class="line"><br/></div>
+</div>
+</li>
+<li><p><span class="guilabel">Network</span> をクリック</p>
+<img alt="../_images/2020-09-19_19h13_10.png" src="../_images/2020-09-19_19h13_10.png"/>
+<div class="line-block">
+<div class="line"><br/></div>
+</div>
+</li>
+<li><p><span class="guilabel">Allow GNS3 to override non custom VMware adapter</span> をチェック</p>
+<img alt="../_images/2020-09-19_19h16_49.png" src="../_images/2020-09-19_19h16_49.png"/>
+<div class="line-block">
+<div class="line"><br/></div>
+</div>
+</li>
+<li><p><span class="guilabel">OK</span> をクリック</p>
+<img alt="../_images/2020-09-19_19h13_44.png" src="../_images/2020-09-19_19h13_44.png"/>
+<div class="line-block">
+<div class="line"><br/></div>
+</div>
+</li>
+<li><p><span class="guilabel">OK</span> をクリック</p>
+<img alt="../_images/2020-09-19_19h14_03.png" src="../_images/2020-09-19_19h14_03.png"/>
+<div class="line-block">
+<div class="line"><br/></div>
+</div>
+</li>
+<li><p><span class="guilabel">Browse End Devices</span> をクリック</p>
+<img alt="../_images/2020-09-19_19h14_19.png" src="../_images/2020-09-19_19h14_19.png"/>
+<div class="line-block">
+<div class="line"><br/></div>
+</div>
+</li>
+<li><p>追加した仮想マシンを確認</p>
+<img alt="../_images/2020-09-19_19h14_33.png" src="../_images/2020-09-19_19h14_33.png"/>
+<div class="line-block">
+<div class="line"><br/></div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="section" id="addpc-pro-use">
+<span id="id7"></span><h2>追加した仮想マシンを使う<a class="headerlink" href="#addpc-pro-use" title="Permalink to this headline">¶</a></h2>
+<p>追加した仮想マシンは他のオブジェクトと同様にドラッグ＆ドロップでネットワーク図に追加できます。 <a class="reference internal" href="../walkthru/walkthru.html#walkthru"><span class="std std-ref">ウォークスルー</span></a> で作成したネットワーク図から PC1 を削除し、追加した仮想マシン（ Windows 10 x64 ）を配置しました。</p>
+<img alt="../_images/2020-09-19_19h35_12.png" src="../_images/2020-09-19_19h35_12.png"/>
+<p>すべてのオブジェクトの電源を ON にしました。</p>
+<img alt="../_images/2020-09-19_19h39_11.png" src="../_images/2020-09-19_19h39_11.png"/>
+<p>追加した仮想マシンの電源が ON になると自動的に起動します（起動に時間を要します）。</p>
+<img alt="../_images/2020-09-19_19h39_33.png" src="../_images/2020-09-19_19h39_33.png"/>
+<p>仮想マシンの IP アドレスは手動で設定します。</p>
+<img alt="../_images/2020-09-19_19h42_02.png" src="../_images/2020-09-19_19h42_02.png"/>
+<p>仮想マシンから PC2 へ <code class="docutils literal notranslate"><span class="pre">ping</span></code> コマンドの実行結果です。疎通ができています。</p>
+<img alt="../_images/2020-09-19_19h52_02.png" src="../_images/2020-09-19_19h52_02.png"/>
+<p>ネットワーク図上の仮想マシンの電源を OFF にすると、仮想マシンは自動でシャットダウンします。</p>
+<img alt="../_images/2020-09-19_19h56_56.png" src="../_images/2020-09-19_19h56_56.png"/>
+</div>
+</div>
+
+      </article>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="../upgrade/upgrade.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">アップグレード</div>
+              </div>
+              <svg><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="addpc-vitualbox.html">
+              <svg><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">End Device の追加：Oracle VM VirtualBox 編</div>
+                
+              </div>
+            </a>
+        </div>
+
+        <div class="related-information">
+              Copyright &#169; 2021, y_mrok
+            |
+            Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+              and
+              <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+              <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">End Device の追加：VMware Pro 編</a><ul>
+<li><a class="reference internal" href="#addpc-pro-vm">追加する仮想マシンの準備</a></li>
+<li><a class="reference internal" href="#addpc-pro-init">準備</a><ul>
+<li><a class="reference internal" href="#vmnet2-vmnet19">VMnet2 ～ VMnet19 の要件</a></li>
+<li><a class="reference internal" href="#id3">設定</a><ul>
+<li><a class="reference internal" href="#id4">仮想ネットワークエディタ</a></li>
+<li><a class="reference internal" href="#gns3">GNS3</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a class="reference internal" href="#addpc-pro-addvm">仮想マシンの追加</a><ul>
+<li><a class="reference internal" href="#vmware-workstation-pro">VMware Workstation Pro</a></li>
+<li><a class="reference internal" href="#addpc-pro-addvm-gns3">GNS3</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#addpc-pro-use">追加した仮想マシンを使う</a></li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </main>
+</div><script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/scripts/main.js"></script>
+    </body>
+</html>

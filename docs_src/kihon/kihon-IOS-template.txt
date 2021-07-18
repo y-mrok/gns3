@@ -1,0 +1,141 @@
+.. _kihon-IOS-template:
+
+IOS router テンプレートの作成
+==================================================
+#. :guilabel:`Edit` をクリック
+
+   .. image:: img/2020-09-05_11h51_15.png
+
+   |
+
+#. :guilabel:`Preferences...` をクリック
+
+   .. image:: img/2020-09-05_11h51_57.png
+
+   |
+
+#. :guilabel:`IOS routers` をクリック
+
+   .. image:: img/2020-09-05_11h52_46.png
+
+   |
+
+#. :guilabel:`New` をクリック
+
+   .. image:: img/2020-09-05_11h53_57.png
+
+   |
+
+#. :guilabel:`Run this IOS router on GNS3 VM` を選択
+
+   .. image:: img/2020-09-05_11h54_49.png
+
+   |
+
+#. :guilabel:`Next` をクリック
+
+   .. image:: img/2020-09-05_11h55_08.png
+
+   |
+
+#. :guilabel:`Browse...` をクリック
+
+   .. image:: img/2020-09-05_11h56_36.png
+
+   |
+
+#. IOS ファイルを選択
+
+   .. image:: img/2020-09-05_11h57_26.png
+
+   |
+
+#. :guilabel:`開く(O)` をクリック
+
+   .. image:: img/2020-09-05_11h58_13.png
+
+   |
+
+#. :guilabel:`Yes` をクリック
+
+   .. image:: img/2020-09-05_11h58_44.png
+
+   |
+
+#. IOS ファイルのロード中
+
+   .. image:: img/2020-09-05_11h59_01.png
+
+   |
+
+#. :guilabel:`Next` をクリック
+
+   .. image:: img/2020-09-05_12h00_02.png
+
+   |
+
+#. :guilabel:`Next` をクリック
+
+   .. image:: img/2020-09-05_12h00_32.png
+
+   |
+
+#. :guilabel:`Next` をクリック
+
+   .. image:: img/2020-09-05_12h00_52.png
+
+   |
+
+#. :guilabel:`Next` をクリック
+
+   .. image:: img/2020-09-05_12h01_20.png
+
+   |
+
+#. :guilabel:`Idle-PC finder` をクリック
+
+   .. image:: img/2020-09-05_12h02_23.png
+
+   |
+
+#. Idle-PC 値の計算中
+
+   .. image:: img/2020-09-05_12h02_55.png
+
+   |
+
+#. :guilabel:`OK` をクリック
+
+   .. image:: img/2020-09-05_12h03_38.png
+
+   |
+
+#. :guilabel:`Finish` をクリック
+
+   .. image:: img/2020-09-05_12h03_59.png
+
+   |
+
+#. :guilabel:`OK` をクリック
+
+   .. image:: img/2020-09-05_12h04_18.png
+
+   |
+
+#. IOS router テンプレートの作成終了
+
+   .. image:: img/2020-09-05_12h05_19.png
+
+   |
+
+#. ルーターのアイコンをクリック
+
+   .. image:: img/2020-09-05_12h05_35.png
+
+   |
+
+#. 取り込んだ IOS ファイルのルーターを確認
+
+   .. image:: img/2020-09-05_12h05_41.png
+
+   |

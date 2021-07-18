@@ -1,0 +1,11 @@
+.. _addpc-pro-vm:
+
+追加する仮想マシンの準備
+==================================================
+GNS3 に追加する仮想マシンは他の VMware Workstation Pro 上の仮想マシンと同様にインストールします。ツールなどが必要な場合は、それらもインストールします。
+
+今回追加する仮想マシンは `Microsoft Windows 10 Enterprise Evaluation <https://www.microsoft.com/ja-jp/evalcenter/evaluate-windows-10-enterprise>`_ です。
+
+.. image:: img/2020-09-19_16h27_16.png
+
+|

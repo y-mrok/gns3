@@ -1,0 +1,13 @@
+.. _vpcs-ping:
+
+疎通確認
+==================================================
+.. code-block:: none
+
+   ping <ip address>
+   trace <ip address>
+   show arp
+
+.. image:: img/2020-09-06_14h13_13.png
+
+|

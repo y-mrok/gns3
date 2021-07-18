@@ -1,0 +1,59 @@
+.. _object-custom:
+
+オブジェクトのカスタマイズ
+==================================================
+配置したルーターのスロットにインターフェースを設定します。
+
+#. 配置したルーターを右クリック
+
+   .. image:: img/2020-09-05_14h15_01.png
+
+   |
+
+#. :guilabel:`Configure` をクリック
+
+   .. image:: img/2020-09-05_14h15_13.png
+
+   |
+
+#. :guilabel:`Slots` をクリック
+
+   .. image:: img/2020-09-05_14h16_51.png
+   
+   |
+
+#. :guilabel:`slots` の初期状態（何も設定されていない）
+
+   .. image:: img/2020-09-05_14h17_37.png
+
+   |
+
+#. プルダウンリストから選択
+
+   - NM-1FE-TX (FastEthernet × 1 ポート)
+   - NM-1E (Ethernet × 1 ポート)
+   - NM-4E (Ethernet × 4 ポート)
+   - NM-16ESW (Ethernet  16 ポート)
+   - NM-4T (Serial × 4 ポート) 
+
+   .. image:: img/2020-09-05_14h18_58.png
+
+   |
+
+#. :guilabel:`slot 0` と :guilabel:`slot 1` に NM-1FE-TX を設定
+
+   .. image:: img/2020-09-05_14h27_13.png
+
+   |
+
+#. :guilabel:`OK` をクリック
+
+   .. image:: img/2020-09-05_14h27_33.png
+
+   |
+
+#. ルーターのカスタマイズ終了
+
+   .. image:: img/2020-09-05_14h29_26.png
+
+   |

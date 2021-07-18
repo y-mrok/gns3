@@ -1,0 +1,14 @@
+.. _vpcs-set-ip:
+
+IP アドレスの設定／確認
+==================================================
+.. code-block:: none
+
+   ip <ip address> <subnetmask> <default gateway>
+   ip dns <dns server>
+   ip dhcp
+   show ip
+
+.. image:: img/2020-09-06_13h50_34.png
+
+|

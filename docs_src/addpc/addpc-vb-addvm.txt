@@ -1,0 +1,95 @@
+.. _addpc-vb-addvm:
+
+仮想マシンの追加
+==================================================
+:ref:`準備した仮想マシン <addpc-vb-vm>` を GNS3 に追加します。
+
+.. _addpc-vb-addvm-player:
+
+#. :guilabel:`Edit` をクリック
+
+   .. image:: img/2020-09-12_09h11_20.png
+
+   |
+
+#. :guilabel:`Preferences...` をクリック
+
+   .. image:: img/2020-09-12_09h11_45.png
+
+   |
+
+#. :guilabel:`VritualBox VMs` をクリック
+
+   .. image:: img/2020-09-12_09h12_07.png
+
+   |
+
+#. :guilabel:`New` をクリック
+
+   .. image:: img/2020-09-12_09h12_40.png
+
+   |
+
+#. :guilabel:`Next` をクリック
+
+   .. image:: img/2020-09-12_09h12_56.png
+
+   |
+
+#. :guilabel:`VM list` のプルダウンリストから追加する仮想マシンを選択
+
+   .. image:: img/2020-09-12_09h13_14.png
+
+   ↓
+
+   .. image:: img/2020-09-12_09h13_42.png
+
+   |
+
+#. :guilabel:`Finish` をクリック
+
+   .. image:: img/2020-09-12_09h13_56.png
+
+   |
+
+#. :guilabel:`Edit` をクリック
+
+   .. image:: img/2020-09-12_09h14_18.png
+
+   |
+
+#. :guilabel:`Network` をクリック
+
+   .. image:: img/2020-09-12_09h14_36.png
+
+   |
+
+#. :guilabel:`Allow GNS3 to use any configured VirtualBox adapter` をチェック
+
+   .. image:: img/2020-09-12_09h15_07.png
+
+   |
+
+#. :guilabel:`OK` をクリック
+
+   .. image:: img/2020-09-12_09h16_22.png
+
+   |
+
+#. :guilabel:`OK` をクリック
+
+   .. image:: img/2020-09-12_09h16_45.png
+
+   |
+
+#. :guilabel:`Browse End Devices` をクリック
+
+   .. image:: img/2020-09-06_11h08_46.png
+
+   |
+
+#. 追加した仮想マシンを確認
+
+   .. image:: img/2020-09-12_09h17_14.png
+
+   |

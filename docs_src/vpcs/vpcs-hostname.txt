@@ -1,0 +1,11 @@
+.. _vpcs-hostname:
+
+ホスト名の変更
+==================================================
+.. code-block:: none
+
+   set pcname <hostname>
+
+.. image:: img/2020-09-06_13h57_26.png
+
+|

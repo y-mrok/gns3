@@ -1,0 +1,460 @@
+<!doctype html>
+<html class="no-js">
+  <head><meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="VMware Workstation Player のインストール" href="kankyo-install-vmware-workstation-player.html" /><link rel="prev" title="Learning GNS3" href="../index.html" />
+
+    <meta name="generator" content="sphinx-4.1.1, furo 2021.07.05.beta38"/>
+        <title>環境構築 - Learning GNS3 2021/07/18 更新 documentation</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/custom.css" />
+    
+
+
+<style>
+  :root {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+    }
+  }
+
+  /* For allowing end-user-specific overrides */
+  .override-light {
+    --color-code-background: #f8f8f8;
+  --color-code-foreground: black;
+  
+  }
+  .override-dark {
+    --color-code-background: #202020;
+  --color-code-foreground: #d0d0d0;
+  
+  }
+</style><link media="(prefers-color-scheme: dark)" rel="stylesheet" href="../_static/pygments_dark.css"></head>
+  <body dir="">
+    
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+      stroke-width="1.5" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+      <path stroke="none" d="M0 0h24v24H0z"/>
+      <line x1="4" y1="6" x2="20" y2="6" />
+      <line x1="10" y1="12" x2="20" y2="12" />
+      <line x1="6" y1="18" x2="20" y2="18" />
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+      class="feather feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+      stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+      class="feather feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <i class="icon"><svg><use href="#svg-menu"></use></svg></i>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">Learning GNS3 2021/07/18 更新　 documentation</div></a>
+    </div>
+    <div class="header-right">
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  
+  
+  <span class="sidebar-brand-text">Learning GNS3 2021/07/18 更新　 documentation</span>
+  
+</a><form class="sidebar-search-container" method="get" action="../search.html">
+  <input class="sidebar-search" placeholder=Search name="q">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form><div class="sidebar-scroll"><div class="sidebar-tree">
+  <ul class="current">
+<li class="toctree-l1 current has-children current-page"><a class="current reference internal" href="#">環境構築</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label for="toctree-checkbox-1"><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="kankyo-install-vmware-workstation-player.html">VMware Workstation Player のインストール</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kankyo-install-vmware-vix.html">VMware VIX のインストール</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kankyo-install-gns3-vm.html">VMware Player：GNS3 VM のインポート</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kankyo-install-gns3.html">VMware Player：GNS3 のインストール</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kankyo-init.html">VMware Player：GNS3 の初期設定</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kankyo-install-oracle-virtualbox.html">Oracle VM VirtualBox のインストール</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kankyo-install-vb-gns3-vm.html">VirtualBox：GNS3 VM のインポート</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kankyo-install-vb-gns3.html">VirtualBox：GNS3 のインストール</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kankyo-vb-init.html">VirtualBox：GNS3 の初期設定</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kankyo-install-vmware-workstation-pro.html">VMware Workstation Pro のインストール</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kankyo-install-pro-gns3-vm.html">VMware Pro：GNS3 VM のインポート</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kankyo-install-pro-gns3.html">VMware Pro：GNS3 のインストール</a></li>
+<li class="toctree-l2"><a class="reference internal" href="kankyo-pro-init.html">VMware Pro：GNS3 の初期設定</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../kihon/kihon.html">基本操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../object/object.html">オブジェクトの操作</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../walkthru/walkthru.html">ウォークスルー</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../vpcs/vpcs.html">VPCS</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../addpc/addpc.html">End Device の追加</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label for="toctree-checkbox-2"><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../addpc/addpc-vmware.html">End Device の追加：VMware Player 編</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../addpc/addpc-vitualbox.html">End Device の追加：Oracle VM VirtualBox 編</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../addpc/addpc-pro-vmware.html">End Device の追加：VMware Pro 編</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../upgrade/upgrade.html">アップグレード</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../changelog/changelog.html">改版履歴</a></li>
+</ul>
+
+</div>
+</div>
+      </div>
+      
+    </div>
+  </aside>
+  <main class="main">
+    <div class="content">
+      <article role="main">
+        <label class="toc-overlay-icon toc-content-icon" for="__toc">
+          <i class="icon"><svg><use href="#svg-toc"></use></svg></i>
+        </label>
+        <div class="section" id="kankyo">
+<span id="id1"></span><h1>環境構築<a class="headerlink" href="#kankyo" title="Permalink to this headline">¶</a></h1>
+<p>Windows 10 上に GNS3 の実行環境を構築します。</p>
+<div class="line-block">
+<div class="line">● <a class="reference internal" href="#kankyo-spec"><span class="std std-ref">GNS3 を実行するパソコンのスペック</span></a></div>
+<div class="line">● <a class="reference internal" href="#kankyo-chuui"><span class="std std-ref">VMware Workstation Player で環境構築するときの注意</span></a></div>
+<div class="line">● <a class="reference internal" href="#kankyo-packages"><span class="std std-ref">インストールするアプリケーション</span></a></div>
+<div class="line">　・ <a class="reference internal" href="#kankyo-packages-common"><span class="std std-ref">共通</span></a></div>
+<div class="line">　・ <a class="reference internal" href="#kankyo-packages-vmware"><span class="std std-ref">VMware Workstation Player 編</span></a></div>
+<div class="line">　・ <a class="reference internal" href="#kankyo-packages-virtualbox"><span class="std std-ref">Oracle VM VirtualBox 編</span></a></div>
+<div class="line">　・ <a class="reference internal" href="#kankyo-packages-vmware-pro"><span class="std std-ref">VMware Workstation Pro 編</span></a></div>
+<div class="line">● <a class="reference internal" href="#kankyo-install"><span class="std std-ref">アプリケーションのインストールと初期設定</span></a></div>
+<div class="line">　・ <a class="reference internal" href="#kankyo-install-vmware"><span class="std std-ref">VMware Workstation Player 編</span></a></div>
+<div class="line">　・ <a class="reference internal" href="#kankyo-install-virtualbox"><span class="std std-ref">Oracle VM VirtualBox 編</span></a></div>
+<div class="line">　・ <a class="reference internal" href="#kankyo-install-vmware-pro"><span class="std std-ref">VMware Workstation Pro 編</span></a></div>
+</div>
+<div class="section" id="gns3">
+<span id="kankyo-spec"></span><h2>GNS3 を実行するパソコンのスペック<a class="headerlink" href="#gns3" title="Permalink to this headline">¶</a></h2>
+<p>GNS3 を実行するパソコンの必要スペックです（リンク先をご確認ください）。</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://docs.gns3.com/docs/getting-started/installation/windows#minimum-requirements">最小構成</a></p></li>
+<li><p><a class="reference external" href="https://docs.gns3.com/docs/getting-started/installation/windows#recommended-requirements">推奨構成</a></p></li>
+<li><p><a class="reference external" href="https://docs.gns3.com/docs/getting-started/installation/windows#optimal-requirements">最適な構成</a></p></li>
+</ul>
+<p>今回 GNS3 をインストールするパソコンのスペックです。</p>
+<img alt="../_images/2020-09-02_20h47_07.png" src="../_images/2020-09-02_20h47_07.png"/>
+<div class="line-block">
+<div class="line"><br/></div>
+</div>
+</div>
+<div class="section" id="vmware-workstation-player">
+<span id="kankyo-chuui"></span><h2>VMware Workstation Player で環境構築するときの注意<a class="headerlink" href="#vmware-workstation-player" title="Permalink to this headline">¶</a></h2>
+<p>VMware Workstation Player と VMware VIX の組み合わせは「 <a class="reference external" href="https://docs.gns3.com/docs/getting-started/setup-wizard-gns3-vm/">GNS3 Setup wizard with the GNS3 VM</a> 」内の「 <a class="reference external" href="https://docs.gns3.com/docs/getting-started/setup-wizard-gns3-vm/#vmware-workstation-vs-player">VMware Workstation vs. Player</a> 」によると次のとおりです。</p>
+<ul class="simple">
+<li><p>VMware Workstation 14 Player + VMware VIX 1.17</p></li>
+<li><p>VMware Workstation 12 Player + VMware VIX 1.15 （以降のバージョン）</p></li>
+</ul>
+<p>現行バージョンである VMware Workstation 15 Player に対応する VMware VIX はリリースされていません。そのため VMware Workstation 15 Player 上で GNS3 を動作させる方法はフォーラム「 <a class="reference external" href="https://gns3.com/community/featured/gns3-with-workstation-player-15-">GNS3 with Workstation Player 15.5</a> 」で議論中なので本ドキュメントでは取り扱いません。なお、 VMware Workstation 15 Pro は VMware VIX を内蔵しているので、 VMware VIX のインストールなしで環境構築ができます。</p>
+<p>本ドキュメントで VMware を使用する場合は下記の組み合わせで環境を構築します。</p>
+<ul class="simple">
+<li><p>VMware Workstation 14 Player + VMware VIX 1.17</p></li>
+</ul>
+<div class="line-block">
+<div class="line"><br/></div>
+</div>
+</div>
+<div class="section" id="kankyo-packages">
+<span id="id5"></span><h2>インストールするアプリケーション<a class="headerlink" href="#kankyo-packages" title="Permalink to this headline">¶</a></h2>
+<p>インストールするアプリケーションの一覧です。一部のアプリケーションのダウンロードにアカウントが必要です。アカウントは無料で作成できます。</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>VMware と Oracle VirtualBox で GNS3 のバージョンが異なるのは、異なる日にダウンロードしたためです。 Oracle VirtualBox 用をダウンロードしたとき、少しだけバージョンが上がっていました。</p>
+</div>
+<div class="section" id="kankyo-packages-common">
+<span id="id6"></span><h3>共通<a class="headerlink" href="#kankyo-packages-common" title="Permalink to this headline">¶</a></h3>
+<p>VMware / Oracle VM VirtualBox のどちらの環境で使用するアプリケーションです。これらは環境構築に着手する前にインストールします。</p>
+<div class="table-wrapper"><table class="docutils align-default">
+<colgroup>
+<col style="width: 33%"/>
+<col style="width: 33%"/>
+<col style="width: 33%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>アプリケーション名</p></td>
+<td><p>ファイル名</p></td>
+<td><p>備考</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://ja.osdn.net/projects/ttssh2/releases/72009">teraterm 4.105</a></p></td>
+<td><p>teraterm-4.105.exe</p></td>
+<td><p>ターミナルソフト</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://github.com/sakura-editor/sakura/releases">Sakura Editor 2.4.1</a></p></td>
+<td><p>sakura-tag-v2.4.1-build2849-ee8234f-Win32-Release-Installer.zip</p></td>
+<td><p>テキストエディタ（使い慣れたもので良い）</p></td>
+</tr>
+</tbody>
+</table></div>
+<div class="line-block">
+<div class="line"><br/></div>
+</div>
+</div>
+<div class="section" id="kankyo-packages-vmware">
+<span id="id7"></span><h3>VMware Workstation Player 編<a class="headerlink" href="#kankyo-packages-vmware" title="Permalink to this headline">¶</a></h3>
+<div class="table-wrapper"><table class="docutils align-default">
+<colgroup>
+<col style="width: 33%"/>
+<col style="width: 33%"/>
+<col style="width: 33%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>アプリケーション名</p></td>
+<td><p>ファイル名</p></td>
+<td><p>備考</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://www.gns3.com/software/download">GNS3 2.2.12</a></p></td>
+<td><p>GNS3-2.2.12-all-in-one-regular.exe</p></td>
+<td><p>Windows</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://gns3.com/software/download-vm">GNS3 VM</a></p></td>
+<td><p>GNS3.VM.VMware.Workstation.2.2.12.zip</p></td>
+<td><p>VMware Workstation and Fusion</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://my.vmware.com/jp/web/vmware/downloads/details?downloadGroup=PLAYER-1418&amp;productId=687&amp;rPId=39191">VMware Workstation 14.1.8 Player</a></p></td>
+<td><p>VMware-player-14.1.8-14921873.exe</p></td>
+<td><p>Windows 64-bit Operating Systems</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://my.vmware.com/group/vmware/downloads/details?downloadGroup=PLAYER-1400-VIX1170&amp;productId=687">VMware VIX 1.17.0 API</a></p></td>
+<td><p>VMware-VIX-1.17.0-6661328.exe</p></td>
+<td><p>Windows 64-bit Operating Systems</p></td>
+</tr>
+</tbody>
+</table></div>
+<p>環境構築は赤枠で囲んだものを使用します。</p>
+<img alt="../_images/2020-09-02_21h20_02.png" src="../_images/2020-09-02_21h20_02.png"/>
+<div class="line-block">
+<div class="line"><br/></div>
+</div>
+</div>
+<div class="section" id="oracle-vm-virtualbox">
+<span id="kankyo-packages-virtualbox"></span><h3>Oracle VM VirtualBox 編<a class="headerlink" href="#oracle-vm-virtualbox" title="Permalink to this headline">¶</a></h3>
+<div class="table-wrapper"><table class="docutils align-default">
+<colgroup>
+<col style="width: 33%"/>
+<col style="width: 33%"/>
+<col style="width: 33%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>アプリケーション名</p></td>
+<td><p>ファイル名</p></td>
+<td><p>備考</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://www.gns3.com/software/download">GNS3 2.2.13</a></p></td>
+<td><p>GNS3-2.2.13-all-in-one-regular.exe</p></td>
+<td><p>Windows</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://gns3.com/software/download-vm">GNS3 VM</a></p></td>
+<td><p>GNS3.VM.VirtualBox.2.2.13.zip</p></td>
+<td><p>VirtualBox</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://www.virtualbox.org/wiki/Downloads">Oracle VirtualBox 6.1.14</a></p></td>
+<td><p>VirtualBox-6.1.14-140239-Win.exe</p></td>
+<td><p>Windows hosts</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://www.virtualbox.org/wiki/Downloads">Oracle VM VirtualBox Extension Pack</a></p></td>
+<td><p>Oracle_VM_VirtualBox_Extension_Pack-6.1.14.vbox-extpack</p></td>
+<td><p>All supported platforms</p></td>
+</tr>
+</tbody>
+</table></div>
+<p>環境構築は赤枠で囲んだものを使用します。</p>
+<img alt="../_images/2020-09-06_18h30_02.png" src="../_images/2020-09-06_18h30_02.png"/>
+<div class="line-block">
+<div class="line"><br/></div>
+</div>
+</div>
+<div class="section" id="vmware-workstation-pro">
+<span id="kankyo-packages-vmware-pro"></span><h3>VMware Workstation Pro 編<a class="headerlink" href="#vmware-workstation-pro" title="Permalink to this headline">¶</a></h3>
+<div class="table-wrapper"><table class="docutils align-default">
+<colgroup>
+<col style="width: 33%"/>
+<col style="width: 33%"/>
+<col style="width: 33%"/>
+</colgroup>
+<tbody>
+<tr class="row-odd"><td><p>アプリケーション名</p></td>
+<td><p>ファイル名</p></td>
+<td><p>備考</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://www.gns3.com/software/download">GNS3 2.2.14</a></p></td>
+<td><p>GNS3-2.2.14-all-in-one-regular.exe</p></td>
+<td><p>Windows</p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://gns3.com/software/download-vm">GNS3 VM</a></p></td>
+<td><p>GNS3.VM.VMware.Workstation.2.2.14.zip</p></td>
+<td><p>VMware Workstation and Fusion</p></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://www.vmware.com/jp/products/workstation-pro/workstation-pro-evaluation.html">VMware Workstation 16 Pro</a></p></td>
+<td><p>VMware-workstation-full-16.0.0-16894299.exe</p></td>
+<td><p>試用版</p></td>
+</tr>
+</tbody>
+</table></div>
+<p>環境構築は赤枠で囲んだものを使用します。</p>
+<img alt="../_images/2020-09-19_10h59_07.png" src="../_images/2020-09-19_10h59_07.png"/>
+<div class="line-block">
+<div class="line"><br/></div>
+</div>
+</div>
+</div>
+<div class="section" id="kankyo-install">
+<span id="id10"></span><h2>アプリケーションのインストールと初期設定<a class="headerlink" href="#kankyo-install" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="kankyo-install-vmware">
+<span id="id11"></span><h3>VMware Workstation Player 編<a class="headerlink" href="#kankyo-install-vmware" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p><a class="reference internal" href="kankyo-install-vmware-workstation-player.html#kankyo-install-vmware-workstation-player"><span class="std std-ref">VMware Workstation 14 Player</span></a></p></li>
+<li><p><a class="reference internal" href="kankyo-install-vmware-vix.html#kankyo-install-vmware-vix"><span class="std std-ref">VMware VIX</span></a></p></li>
+<li><p><a class="reference internal" href="kankyo-install-gns3-vm.html#kankyo-install-gns3-vm"><span class="std std-ref">GNS3 VM のインポート</span></a></p></li>
+<li><p><a class="reference internal" href="kankyo-install-gns3.html#kankyo-install-gns3"><span class="std std-ref">GNS3</span></a></p></li>
+<li><p><a class="reference internal" href="kankyo-init.html#kankyo-init"><span class="std std-ref">GNS3 の初期設定</span></a></p></li>
+</ol>
+</div>
+<div class="section" id="kankyo-install-virtualbox">
+<span id="id12"></span><h3>Oracle VM VirtualBox 編<a class="headerlink" href="#kankyo-install-virtualbox" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p><a class="reference internal" href="kankyo-install-oracle-virtualbox.html#kankyo-install-oracle-virtualbox"><span class="std std-ref">Oracle VM VirtualBox</span></a></p></li>
+<li><p><a class="reference internal" href="kankyo-install-vb-gns3-vm.html#kankyo-install-vb-gns3-vm"><span class="std std-ref">GNS3 VM のインポート</span></a></p></li>
+<li><p><a class="reference internal" href="kankyo-install-vb-gns3.html#kankyo-install-vb-gns3"><span class="std std-ref">GNS3</span></a></p></li>
+<li><p><a class="reference internal" href="kankyo-vb-init.html#kankyo-vb-init"><span class="std std-ref">GNS3 の初期設定</span></a></p></li>
+</ol>
+</div>
+<div class="section" id="kankyo-install-vmware-pro">
+<span id="id13"></span><h3>VMware Workstation Pro 編<a class="headerlink" href="#kankyo-install-vmware-pro" title="Permalink to this headline">¶</a></h3>
+<ol class="arabic simple">
+<li><p><a class="reference internal" href="kankyo-install-vmware-workstation-pro.html#kankyo-install-vmware-workstation-pro"><span class="std std-ref">VMware Workstation 16 Pro （試用版）</span></a></p></li>
+<li><p><a class="reference internal" href="kankyo-install-pro-gns3-vm.html#kankyo-install-pro-gns3-vm"><span class="std std-ref">GNS3 VM のインポート</span></a></p></li>
+<li><p><a class="reference internal" href="kankyo-install-pro-gns3.html#kankyo-install-pro-gns3"><span class="std std-ref">GNS3</span></a></p></li>
+<li><p><a class="reference internal" href="kankyo-pro-init.html#kankyo-pro-init"><span class="std std-ref">GNS3 の初期設定</span></a></p></li>
+</ol>
+<div class="toctree-wrapper compound">
+</div>
+</div>
+</div>
+</div>
+
+      </article>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="kankyo-install-vmware-workstation-player.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">VMware Workstation Player のインストール</div>
+              </div>
+              <svg><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="../index.html">
+              <svg><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Home</div>
+                
+              </div>
+            </a>
+        </div>
+
+        <div class="related-information">
+              Copyright &#169; 2021, y_mrok
+            |
+            Built with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+              and
+              <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+              <a href="https://github.com/pradyunsg/furo">Furo theme</a>.
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            Contents
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">環境構築</a><ul>
+<li><a class="reference internal" href="#gns3">GNS3 を実行するパソコンのスペック</a></li>
+<li><a class="reference internal" href="#vmware-workstation-player">VMware Workstation Player で環境構築するときの注意</a></li>
+<li><a class="reference internal" href="#kankyo-packages">インストールするアプリケーション</a><ul>
+<li><a class="reference internal" href="#kankyo-packages-common">共通</a></li>
+<li><a class="reference internal" href="#kankyo-packages-vmware">VMware Workstation Player 編</a></li>
+<li><a class="reference internal" href="#oracle-vm-virtualbox">Oracle VM VirtualBox 編</a></li>
+<li><a class="reference internal" href="#vmware-workstation-pro">VMware Workstation Pro 編</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#kankyo-install">アプリケーションのインストールと初期設定</a><ul>
+<li><a class="reference internal" href="#kankyo-install-vmware">VMware Workstation Player 編</a></li>
+<li><a class="reference internal" href="#kankyo-install-virtualbox">Oracle VM VirtualBox 編</a></li>
+<li><a class="reference internal" href="#kankyo-install-vmware-pro">VMware Workstation Pro 編</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </main>
+</div><script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/scripts/main.js"></script>
+    </body>
+</html>

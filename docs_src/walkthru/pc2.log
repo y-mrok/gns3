@@ -1,0 +1,13 @@
+PC2> ip 192.168.31.1 255.255.255.0 192.168.31.254
+Checking for duplicate address...
+PC1 : 192.168.31.1 255.255.255.0 gateway 192.168.31.254
+
+PC2> 
+PC2> ping 192.168.11.1
+84 bytes from 192.168.11.1 icmp_seq=1 ttl=62 time=44.385 ms
+84 bytes from 192.168.11.1 icmp_seq=2 ttl=62 time=39.561 ms
+84 bytes from 192.168.11.1 icmp_seq=3 ttl=62 time=38.487 ms
+84 bytes from 192.168.11.1 icmp_seq=4 ttl=62 time=25.438 ms
+84 bytes from 192.168.11.1 icmp_seq=5 ttl=62 time=45.302 ms
+
+PC2> 

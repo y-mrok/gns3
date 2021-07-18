@@ -1,0 +1,18 @@
+.. _addpc-vb-vm:
+
+追加する仮想マシンの準備
+==================================================
+GNS3 に追加する仮想マシンは他の Oracle VM VirtualBox 上の仮想マシンと同様にインストールしたり、 `Vagrant <https://vagrant-ja.readthedocs.io>`_ を使ってインストールします。ツールなどが必要な場合は、それらもインストールします。
+
+今回追加する仮想マシンは `The CentOS Project <https://www.centos.org/>`_ がリリースしている「 CentOS 8 」を Vagrant を使用して準備します。
+
+**■ Vagrantfile**
+
+.. literalinclude:: ./Vagrantfile
+   :language: none
+
+**■ 仮想マシンの仕様**
+
+.. image:: img/2020-09-12_07h57_02.png
+
+|
